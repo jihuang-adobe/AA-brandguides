@@ -79,7 +79,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
-    main.classList.add('col-md-10');
+    main.classList.add('col-md-10', 'px-5', 'py-5');
     //document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }
@@ -106,7 +106,7 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  doc.querySelector('header').classList.add('col-md-2');
+  doc.querySelector('header').classList.add('col-md-2', 'px-1', 'py-4', 'scrollarea');
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
 
