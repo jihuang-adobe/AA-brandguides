@@ -99,6 +99,16 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  // create banner
+  const bannerDiv = document.createElement('div');
+  bannerDiv.innerHTML = `<picture>
+                          <source type="image/webp" srcset="./media_14019e31638254925d3feb75e6be18ad68bb77a91.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
+                          <source type="image/webp" srcset="./media_14019e31638254925d3feb75e6be18ad68bb77a91.png?width=750&amp;format=webply&amp;optimize=medium">
+                          <source type="image/png" srcset="./media_14019e31638254925d3feb75e6be18ad68bb77a91.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
+                          <img loading="lazy" alt="" src="./media_14019e31638254925d3feb75e6be18ad68bb77a91.png?width=750&amp;format=png&amp;optimize=medium" width="2880" height="720" class="img-fluid">
+                        </picture>`;
+  doc.querySelector('body').prepend(bannerDiv);
+
   const main = doc.querySelector('main');
   await loadBlocks(main);
 

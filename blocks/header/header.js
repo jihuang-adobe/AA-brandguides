@@ -1,12 +1,14 @@
 import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
 
 function renderBlock(block) {
+
+
   if(!block.classList.contains('container-fluid')) {
     block.classList.add('container-fluid');
 
     const rootULs = block.querySelectorAll('div > ul');
     [...rootULs].forEach((rootUL) => {
-      rootUL.classList.add('nav', 'nav-pills');
+      rootUL.classList.add('nav', 'nav-pills', 'flex-column');
       rootUL.id = 'nav';
     });
 
